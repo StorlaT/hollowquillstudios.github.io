@@ -24,7 +24,7 @@
     body {
       margin: 0;
       background:
-        linear-gradient(rgba(18, 13, 24, 0.78), rgba(18, 13, 24, 0.92)),
+        linear-gradient(rgba(18, 13, 24, 0.62), rgba(18, 13, 24, 0.84)),
         url("assets/stump_bg.png") center top / cover fixed;
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
@@ -72,7 +72,7 @@
     }
 
     h1 {
-      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
       line-height: 0.98;
       margin: 0 0 20px;
     }
@@ -140,11 +140,18 @@
       margin-bottom: 24px;
     }
 
+    .feature {
+      text-align: center;
+    }
+
     .feature img {
       width: 100%;
+      max-width: 220px;
+      display: block;
+      margin: 0 auto 18px auto;
+    
       border-radius: 18px;
       border: 1px solid var(--border);
-      margin-bottom: 14px;
     }
 
     .feature h3 {
@@ -194,12 +201,43 @@
         grid-template-columns: 1fr;
       }
 
+      .hero {
+        gap: 22px;
+        padding-bottom: 32px;
+      }
+
+      .hero-art {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
 
       body {
         background-attachment: scroll;
+      }
+      
+      .logo {
+        max-width: 260px;
+        margin-bottom: 18px;
+      }
+      
+      .intro {
+        font-size: 1.02rem;
+      }
+      
+      .card {
+        padding: 22px;
+      }
+      
+      .button-row {
+        flex-direction: column;
+      }
+      
+      .button {
+        width: 100%;
       }
     }
   </style>
@@ -247,12 +285,6 @@
       />
     </section>
 
-    <img
-      class="banner"
-      src="assets/feature_graphic.png"
-      alt="Goblin's Dice Stump feature graphic"
-    />
-
     <section class="card">
       <h2>What is Goblin's Dice Stump?</h2>
 
@@ -273,18 +305,10 @@
       </article>
 
       <article class="card feature">
-        <img src="icon_alternative.png" alt="Dice stored inside a glowing stump" />
+        <img src="assets/icon_alternative.png" alt="Dice stored inside a glowing stump" />
         <h3>Backup & Restore</h3>
         <p>
           Keep your collection safer with export, import, and optional cloud features.
-        </p>
-      </article>
-
-      <article class="card feature">
-        <img src="assets/icon_alternative.png" alt="Goblin inside a tree stump" />
-        <h3>Built for Dice Goblins</h3>
-        <p>
-          A warm, playful interface made for collectors who enjoy a little character.
         </p>
       </article>
     </section>
