@@ -3,138 +3,305 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Goblin's Dice Stump - Privacy Policy</title>
 
   <style>
+    :root {
+      --bg: #1a1325;
+      --card: #2a1b3d;
+      --text: #f4e6c2;
+      --gold: #ffd166;
+      --link: #8ecae6;
+      --border: rgba(255, 209, 102, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #1a1325;
-      color: #f4e6c2;
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(255, 209, 102, 0.08), transparent 35%),
+        var(--bg);
+
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
     }
 
-    h1, h2 {
-      color: #ffd166;
+    .container {
+      max-width: 920px;
+      margin: auto;
+      padding: 32px 20px 60px;
+    }
+
+    .top-link {
+      margin-bottom: 24px;
+    }
+
+    .top-link a {
+      color: var(--link);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .top-link a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+
+    h2 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
     }
 
     a {
-      color: #8ecae6;
+      color: var(--link);
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      opacity: 0.95;
+      max-width: 760px;
     }
 
     .card {
-      background-color: #2a1b3d;
-      border-radius: 14px;
-      padding: 24px;
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
       margin-bottom: 24px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
       opacity: 0.8;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      margin-right: 18px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding-top: 24px;
+      }
+
+      .card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Goblin's Dice Stump Privacy Policy</h1>
+  <div class="container">
 
-  <p>
-    Hollowquill Studios built Goblin’s Dice Stump as a dice collection
-    and organization app for tabletop gaming enthusiasts.
-  </p>
+    <div class="top-link">
+      <a href="index.html">← Back to Hollowquill Studios</a>
+    </div>
 
-  <div class="card">
-    <h2>Information We Collect</h2>
+    <section class="hero">
 
-    <p>
-      Goblin’s Dice Stump may collect limited information required
-      for app functionality and stability, including:
-    </p>
+      <div class="eyebrow">
+        Hollowquill Studios
+      </div>
 
-    <ul>
-      <li>Basic analytics information</li>
-      <li>Crash reports and diagnostics</li>
-      <li>Cloud backup data (if enabled)</li>
-      <li>Dice collection images uploaded by the user</li>
-    </ul>
+      <h1>Goblin's Dice Stump Privacy Policy</h1>
+
+      <p class="intro">
+        Hollowquill Studios created Goblin’s Dice Stump as a fantasy-themed
+        dice collection and organization app for tabletop gaming enthusiasts,
+        collectors, and hobbyists.
+      </p>
+
+      <p class="intro">
+        We believe software should be transparent, respectful,
+        and trustworthy. This page explains what information
+        the app may collect and how it is used.
+      </p>
+
+    </section>
+
+    <div class="card">
+      <h2>Information We Collect</h2>
+
+      <p>
+        Goblin’s Dice Stump may collect limited information
+        required for app functionality and stability, including:
+      </p>
+
+      <ul>
+        <li>Basic analytics information</li>
+        <li>Crash reports and diagnostics</li>
+        <li>Cloud backup data (if enabled)</li>
+        <li>Dice collection images uploaded by the user</li>
+      </ul>
+
+      <p>
+        Most collection data is stored locally on your device
+        unless optional cloud synchronization or backup features
+        are enabled by the user.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Camera and Photos</h2>
+
+      <p>
+        Goblin’s Dice Stump may request access to your device
+        camera and photo library so you can:
+      </p>
+
+      <ul>
+        <li>Take photos of your dice sets</li>
+        <li>Upload dice images into your collection</li>
+        <li>Manage and organize your dice inventory</li>
+      </ul>
+
+      <p>
+        Images are used solely for app functionality
+        and are never sold to third parties.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Analytics and Crash Reporting</h2>
+
+      <p>
+        The app uses Firebase Analytics and Firebase Crashlytics
+        to help improve app stability, usability, and performance.
+      </p>
+
+      <p>
+        These services may collect anonymized technical information,
+        such as device type, operating system version,
+        app version, and crash logs.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Cloud Storage</h2>
+
+      <p>
+        If cloud backup or synchronization features are enabled,
+        collection data and uploaded images may be securely stored
+        using Firebase services.
+      </p>
+
+      <p>
+        Cloud features are optional and may require a user account.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Data Sharing</h2>
+
+      <p>
+        Hollowquill Studios does not sell personal information,
+        uploaded images, or collection data to third parties.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Data Deletion</h2>
+
+      <p>
+        Users may request deletion of cloud-stored account data
+        by contacting support@hollowquillstudios.com.
+      </p>
+
+      <p>
+        Locally stored collection data may also be removed directly
+        from the app using built-in delete or reset functionality.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Children's Privacy</h2>
+
+      <p>
+        Goblin’s Dice Stump is not directed toward children under 13.
+        We do not knowingly collect personal information from children.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+
+      <p>
+        If you have questions about this Privacy Policy,
+        you may contact:
+      </p>
+
+      <p>
+        <strong>Hollowquill Studios</strong><br />
+        <a href="mailto:support@hollowquillstudios.com">
+          support@hollowquillstudios.com
+        </a>
+      </p>
+    </div>
+
+    <footer>
+      <div>
+        Last updated: May 2026
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="eula.html">EULA</a>
+      </div>
+    </footer>
+
   </div>
-
-  <div class="card">
-    <h2>Camera and Photos</h2>
-
-    <p>
-      Goblin’s Dice Stump may request access to your device camera
-      and photo library so you can:
-    </p>
-
-    <ul>
-      <li>Take photos of your dice sets</li>
-      <li>Upload dice images into your collection</li>
-      <li>Manage and organize your dice inventory</li>
-    </ul>
-
-    <p>
-      Images are used solely for app functionality and are not sold
-      to third parties.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Analytics and Crash Reporting</h2>
-
-    <p>
-      The app uses Firebase Analytics and Firebase Crashlytics
-      to help improve app stability, usability, and performance.
-    </p>
-
-    <p>
-      These services may collect anonymized technical information
-      such as device type, app version, and crash logs.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Cloud Storage</h2>
-
-    <p>
-      If cloud backup or synchronization features are enabled,
-      collection data and uploaded images may be securely stored
-      using Firebase services.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Data Sharing</h2>
-
-    <p>
-      Hollowquill Studios does not sell personal information
-      or uploaded images to third parties.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Contact</h2>
-
-    <p>
-      If you have questions about this Privacy Policy,
-      you may contact:
-    </p>
-
-    <p>
-      <strong>Hollowquill Studios</strong><br>
-      support@hollowquillstudios.com
-    </p>
-  </div>
-
-  <footer>
-    Last updated: May 2026
-  </footer>
 
 </body>
 </html>
