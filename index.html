@@ -215,19 +215,10 @@
       margin: 0;
     }
 
-    .values-grid,
     .project-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
-    }
-
-    .panel {
-      background: rgba(255, 247, 230, 0.72);
-      border: 1px solid rgba(75, 51, 45, 0.18);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 14px 32px rgba(36, 24, 22, 0.08);
     }
 
     .panel h3 {
@@ -241,7 +232,9 @@
     }
 
     .project-card {
-      grid-column: span 2;
+      max-width: 760px;
+      margin: 0 auto;
+    
       background: var(--forest);
       color: var(--cream);
       border-radius: 28px;
@@ -271,14 +264,6 @@
     
     .project-card {
       overflow: hidden;
-    }
-
-    .project-side {
-      background: var(--forest-soft);
-      color: var(--cream);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 18px 38px rgba(36, 24, 22, 0.16);
     }
 
     .project-side ul {
@@ -342,7 +327,6 @@
         display: none;
       }
 
-      .values-grid,
       .project-grid {
         grid-template-columns: 1fr;
       }
@@ -399,32 +383,6 @@
     </section>
 
     <main>
-      <section id="about">
-        <div class="section-title">
-          <h2>What Hollowquill stands for</h2>
-          <p>
-            Hollowquill is not just the home of one app. It is the banner for a growing collection of creative projects, built with care, clarity, and a bit of mischief.
-          </p>
-        </div>
-
-        <div class="values-grid">
-          <article class="panel">
-            <h3>Useful first</h3>
-            <p>Every project should solve a real problem, reduce friction, or help someone enjoy their hobby more.</p>
-          </article>
-
-          <article class="panel">
-            <h3>Character matters</h3>
-            <p>We like interfaces that feel warm, memorable, and human instead of cold, generic, or forgettable.</p>
-          </article>
-
-          <article class="panel">
-            <h3>Built with care</h3>
-            <p>Small details matter: wording, accessibility, privacy, support, and the feeling of trust users get from the first click.</p>
-          </article>
-        </div>
-      </section>
-
       <section id="work">
         <div class="section-title">
           <h2>Our work</h2>
@@ -457,16 +415,6 @@
             </a>
         
           </article>
-
-          <aside class="project-side">
-            <h3>Coming next</h3>
-            <p>Hollowquill will grow into a home for more apps, tools, games, writing, and hobby-focused experiments.</p>
-            <ul>
-              <li>Creative utility apps</li>
-              <li>Tabletop gaming tools</li>
-              <li>Story-driven digital projects</li>
-            </ul>
-          </aside>
         </div>
       </section>
 
