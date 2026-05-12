@@ -190,12 +190,9 @@
     }
 
     main {
-      background:
-        linear-gradient(
-          180deg,
-          #1b2d27 0%,
-          #16241f 100%
-        );
+      background: transparent;
+      border-top: none;
+    }
     
       border-top: 1px solid rgba(255, 247, 230, 0.08);
     }
@@ -212,6 +209,7 @@
     }
 
     .section-title h2 {
+      color: var(--parchment-dark);
       font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1;
       margin: 0 0 14px;
@@ -249,7 +247,7 @@
     }
 
     .project-card {
-      width: min(100%, 920px);
+      width: min(100%, 1120px);
       margin: 0 auto;
     
       background: var(--forest);
