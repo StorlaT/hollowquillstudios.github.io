@@ -228,6 +228,51 @@
         padding: 22px;
       }
     }
+
+    #backToTop {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 54px;
+      height: 54px;
+      border: 1px solid rgba(255, 209, 102, 0.35);
+      border-radius: 999px;
+    
+      background: rgba(42, 27, 61, 0.92);
+      color: var(--gold);
+    
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+    
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+    
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    
+      z-index: 1000;
+    }
+    
+    #backToTop:hover {
+      background: rgba(58, 38, 84, 0.98);
+      transform: translateY(0) scale(1.05);
+    }
+    
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -406,6 +451,29 @@
     </footer>
 
   </div>
+  
+  <button id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
 
+  <script>
+    const backToTopButton = document.getElementById("backToTop");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add("show");
+      } else {
+        backToTopButton.classList.remove("show");
+      }
+    });
+  
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+  
 </body>
 </html>
