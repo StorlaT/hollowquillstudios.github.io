@@ -103,7 +103,7 @@
     .hero {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 62px 22px 58px;
+      padding: 42px 22px 52px;
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
       gap: 42px;
@@ -215,19 +215,30 @@
       margin: 0;
     }
 
-    .support-email {
-      margin: 0;
-      font-size: 0.9rem;
-      opacity: 0.75;
-      word-break: break-word;
-      text-align: center;
+   .support-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
     }
-
+    
     .support-actions {
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+    
+      min-width: 260px;
+    }
+    
+    .support-email {
+      font-size: 0.82rem;
+      opacity: 0.82;
+      text-align: center;
+      word-break: break-word;
     }
 
     .project-grid {
@@ -478,18 +489,26 @@
 
       <section id="contact">
         <div class="contact-band">
-          <div>
-            <h2>Need support or want to reach us?</h2>
-            <p>Email Hollowquill Studios and we will help as soon as we can.</p>
-          </div>
-           <div class="support-actions">
-            <a class="button primary" href="mailto:support@hollowquillstudios.com">
-              Contact Us
-            </a>
+          <div class="support-row">
+  
+            <div>
+              <h2>Need support or want to reach us?</h2>
           
-            <p class="support-email">
-              support@hollowquillstudios.com
-            </p>
+              <p>
+                Email Hollowquill Studios and we will help as soon as we can.
+              </p>
+            </div>
+          
+            <div class="support-actions">
+              <a class="button primary" href="mailto:support@hollowquillstudios.com">
+                Contact Us
+              </a>
+          
+              <div class="support-email">
+                support@hollowquillstudios.com
+              </div>
+            </div>
+          
           </div>
         </div>
       </section>
