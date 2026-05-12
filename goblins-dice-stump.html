@@ -140,16 +140,18 @@
       box-shadow: 0 14px 34px rgba(0,0,0,0.35);
     }
 
-    .grid {
+   .grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
       margin-bottom: 24px;
-      max-width: 760px;
+      max-width: 1120px;
     }
 
     .feature {
       text-align: center;
+      max-width: 340px;
+      margin: 0 auto;
     }
 
     .feature img {
@@ -431,10 +433,10 @@
       </article>
 
       <article class="card feature">
-        <img src="assets/export_store.png" alt="export your horde" />
-        <h3>Backup & Restore</h3>
+        <img src="assets/random_dice_store.png" alt="Discover hidden dice" />
+        <h3>Discover Hidden Dice</h3>
         <p>
-          Keep your collection safer with export, import, and optional cloud features.
+          Let the stump choose a random treasure from your collection when inspiration runs dry.
         </p>
       </article>
     </section>
