@@ -228,7 +228,7 @@
       display: flex;
       flex-direction: column;
       flex-shrink: 0;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
     
       min-width: 260px;
@@ -237,7 +237,7 @@
     .support-email {
       font-size: 0.82rem;
       opacity: 0.82;
-      text-align: center;
+      text-align: left;
       word-break: break-word;
     }
 
@@ -281,6 +281,8 @@
     }
 
     .contact-band {
+      width: min(100%, 920px);
+      margin: 0 auto;
       background: var(--ink);
       color: var(--cream);
       border-radius: 30px;
