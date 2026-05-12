@@ -75,8 +75,8 @@
     }
 
     .sigil {
-      width: 42px;
-      height: 42px;
+      width: 52px;
+      height: 52px;
       display: grid;
       place-items: center;
       border: 2px solid var(--parchment-dark);
@@ -85,6 +85,13 @@
       color: var(--parchment);
       box-shadow: 0 8px 22px var(--shadow);
       font-size: 22px;
+    }
+
+    .sigil img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      display: block;
     }
 
     nav a {
@@ -331,8 +338,8 @@
       }
     
       .sigil {
-        width: 44px;
-        height: 44px;
+        width: 52px;
+        height: 52px;
         font-size: 20px;
         flex-shrink: 0;
       }
@@ -418,7 +425,12 @@
     <header>
       <div class="nav">
         <a class="brand-mark" href="index.html" aria-label="Hollowquill Studios home">
-          <span class="sigil">✦</span>
+          <span class="sigil">
+            <img
+              src="assets/hq_icon_small.png"
+              alt="Hollowquill Studios logo"
+            />
+          </span>
           <span>Hollowquill Studios</span>
         </a>
 
