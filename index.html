@@ -300,26 +300,37 @@
     }
 
     @media (max-width: 820px) {
+      section {
+        padding: 42px 22px;
+      }
+      
       .hero {
-        grid-template-columns: 1fr;
-        padding-top: 68px;
+        padding-top: 48px;
+        padding-bottom: 42px;
       }
-
-      nav {
-        display: none;
+      
+      #work {
+        padding-top: 46px;
+        padding-bottom: 36px;
       }
-
-      .project-grid {
-        grid-template-columns: 1fr;
+      
+      #contact {
+        padding-top: 34px;
       }
-
-      .project-card {
-        grid-column: auto;
-      }
-
+      
       .contact-band {
-        align-items: flex-start;
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .contact-band .button {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(0.85rem, 4vw, 1rem);
+        padding: 12px 14px;
+        overflow-wrap: anywhere;
+        text-align: center;
       }
     }
   </style>
