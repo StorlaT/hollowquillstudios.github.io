@@ -77,19 +77,15 @@
     .sigil {
       width: 52px;
       height: 52px;
-      display: grid;
-      place-items: center;
-      border: 2px solid var(--parchment-dark);
-      border-radius: 50%;
-      background: radial-gradient(circle, #3a251e, #160f0d);
-      color: var(--parchment);
-      box-shadow: 0 8px 22px var(--shadow);
-      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .sigil img {
-      width: 70%;
-      height: 70%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       display: block;
     }
