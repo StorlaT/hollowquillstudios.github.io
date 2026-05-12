@@ -43,7 +43,7 @@
     .container {
       max-width: 1120px;
       margin: auto;
-      padding: 16px 20px 60px;
+      padding: 16px 22px 60px;
     }
 
     .top-link {
@@ -57,9 +57,9 @@
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
+      gap: 42px;
       align-items: center;
-      padding: 18px 0 56px;
+      padding: 28px 0 32px;
     }
 
     .logo {
@@ -78,10 +78,11 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 8vw, 4.4rem);
-      line-height: 0.98;
-      margin: 0 0 20px;
-    }
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.02;
+    margin: 0 0 22px;
+    letter-spacing: -0.05em;
+  }
 
     h2 {
       color: var(--gold);
@@ -261,9 +262,27 @@
       text-decoration: none;
     }
 
+    @media (min-width: 821px) {
+      .intro,
+      .card p,
+      .feature p,
+      li {
+        font-size: 1.12rem;
+        line-height: 1.7;
+      }
+    }
+
     @media (max-width: 820px) {
       nav {
         display: none;
+      }
+      
+      .nav {
+        padding: 14px 18px;
+      }
+      
+      .brand-mark {
+        font-size: 1.15rem;
       }
       
       .sigil {
@@ -314,6 +333,14 @@
       
       .button {
         width: 100%;
+      }
+
+      .container {
+        padding: 16px 22px 48px;
+      }
+      
+      .hero {
+        padding: 26px 0 30px;
       }
     }
   </style>
