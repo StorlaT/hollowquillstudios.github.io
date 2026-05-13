@@ -62,6 +62,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 20px;
+      position: relative;
     }
 
     .brand-mark {
@@ -90,7 +91,13 @@
       display: block;
     }
 
-    nav a {
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .site-nav a {
       color: var(--cream);
       text-decoration: none;
       margin-left: 18px;
@@ -98,9 +105,51 @@
       opacity: 0.86;
     }
 
-    nav a:hover {
+    .site-nav a:hover {
       opacity: 1;
       color: var(--parchment-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      margin-left: auto;
+      border: 1px solid rgba(255, 247, 230, 0.18);
+      border-radius: 999px;
+      background: rgba(15, 23, 21, 0.96);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--parchment-dark);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .menu-backdrop {
+      display: none;
     }
 
     .hero {
@@ -365,8 +414,63 @@
         flex-shrink: 0;
       }
     
-      nav {
-        display: none;
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .site-nav {
+        display: flex;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 18px;
+        width: min(280px, calc(100vw - 36px));
+        padding: 14px;
+        border: 1px solid rgba(255, 247, 230, 0.12);
+        border-radius: 18px;
+        background: rgba(15, 23, 21, 0.98);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px) scale(0.98);
+        transform-origin: top right;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          visibility 0.2s ease;
+      }
+
+      .site-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+      }
+
+      .site-nav a {
+        margin-left: 0;
+        width: 100%;
+        padding: 8px 0;
+      }
+
+      .menu-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(7, 4, 10, 0.42);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 8;
+      }
+
+      .menu-backdrop.is-open {
+        opacity: 1;
+        pointer-events: auto;
       }
     
       .hero {
@@ -439,6 +543,7 @@
 
 <body>
   <div class="page-wrap">
+    <div class="menu-backdrop" aria-hidden="true"></div>
     <header>
       <div class="nav">
         <a class="brand-mark" href="index.html" aria-label="Hollowquill Studios home">
@@ -451,10 +556,15 @@
           <span>Hollowquill Studios</span>
         </a>
 
-        <nav aria-label="Main navigation">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
           <a href="#work">Projects</a>
           <a href="#contact">Contact</a>
-          <a href="privacy-policy.html">Privacy</a>
         </nav>
       </div>
     </header>
@@ -483,7 +593,7 @@
     <main>
       <section id="work">
         <div class="section-title">
-          <h2>Newest project</h2>
+          <h2>Our newest project</h2>
         </div>
 
         <div class="project-grid">
@@ -491,7 +601,7 @@
         
             <img
               class="project-logo"
-              src="assets/logo.png"
+              src="goblins-dice-stump/assets/logo.png"
               alt="Goblin's Dice Stump"
             />
         
@@ -501,7 +611,7 @@
               photograph, and track their shiny math rocks.
             </p>
         
-            <a class="button primary" href="goblins-dice-stump.html">
+            <a class="button primary" href="goblins-dice-stump/index.html">
               View Project
             </a>
         
@@ -538,13 +648,42 @@
 
     <footer>
       <div class="footer-inner">
-        <span>© 2026 Hollowquill Studios. All rights reserved.</span>
-        <span>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="eula.html">EULA</a>
-        </span>
+        <span>&copy; 2026 Hollowquill Studios. All rights reserved.</span>
       </div>
     </footer>
   </div>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = document.querySelector(".site-nav");
+    const menuBackdrop = document.querySelector(".menu-backdrop");
+
+    if (menuToggle && siteNav) {
+      const closeMenu = () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        siteNav.classList.remove("is-open");
+        if (menuBackdrop) {
+          menuBackdrop.classList.remove("is-open");
+        }
+      };
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        siteNav.classList.toggle("is-open", !isOpen);
+        if (menuBackdrop) {
+          menuBackdrop.classList.toggle("is-open", !isOpen);
+        }
+      });
+
+      siteNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      if (menuBackdrop) {
+        menuBackdrop.addEventListener("click", closeMenu);
+      }
+    }
+  </script>
 </body>
 </html>
